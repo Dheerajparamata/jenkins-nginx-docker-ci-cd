@@ -1,45 +1,94 @@
 # Jenkins Nginx Docker CI/CD
 
+Automating an Nginx web server deployment using Jenkins, Docker, GitHub, and Google Cloud Platform (GCP).
+
 ## Project Overview
 
-This project demonstrates a basic CI/CD workflow using Jenkins, GitHub, Docker, Nginx, and Google Cloud Platform.
-
-## Architecture
-
-GitHub
-   |
-   v
-Jenkins
-   |
-   v
-Docker Image
-   |
-   v
-Nginx Container
-   |
-   v
-Web Browser
+This project demonstrates how to build and deploy an Nginx web server using Jenkins CI/CD and Docker on a Google Cloud Platform (GCP) Virtual Machine.
 
 ## Technologies Used
 
-- Jenkins
-- Git
-- GitHub
-- Docker
-- Nginx
-- Linux
-- Google Cloud Platform
-- Debian
+* Google Cloud Platform (GCP)
+* Compute Engine
+* Debian 12
+* Jenkins
+* Git
+* GitHub
+* Docker
+* Nginx
+* Linux
 
-## Project Workflow
+## Project Architecture
 
-1. Source code is maintained in GitHub.
-2. Jenkins retrieves the source code.
-3. Jenkins executes the build.
-4. Jenkins builds the Docker image.
-5. Docker runs the Nginx container.
-6. The application is accessed through the VM external IP.
+```text
+GitHub Repository
+      │
+      ▼
+Jenkins
+      │
+      ▼
+Docker Image
+      │
+      ▼
+Docker Container
+      │
+      ▼
+Nginx Web Server
+      │
+      ▼
+Google Cloud VM
+      │
+      ▼
+Web Browser
+```
+
+## Commands Used
+
+```bash
+git --version
+java -version
+docker --version
+
+docker build -t project6-nginx:latest .
+
+docker rm -f project6-nginx-container || true
+
+docker run -d \
+  --name project6-nginx-container \
+  -p 8081:80 \
+  project6-nginx:latest
+
+docker ps
+
+curl http://localhost:8081
+```
+
+## Result
+
+* Successfully connected GitHub repository with Jenkins.
+* Successfully cloned project files from GitHub.
+* Successfully built the Nginx Docker image.
+* Successfully deployed the Nginx Docker container.
+* Successfully replaced the previous container automatically.
+* Successfully verified the custom webpage using curl.
+* Successfully completed the Jenkins CI/CD build.
+* Jenkins build finished with **SUCCESS**.
+* Website deployed using HTTP on port **8081**.
+
+## Screenshots
+
+### 1. GitHub Repository
+
+### 2. Jenkins Job
+
+### 3. Jenkins Console Output
+
+### 4. Docker Container Running
+
+### 5. Browser Output
+
+### 6. curl localhost Output
 
 ## Author
 
-Dheeraj Paramata
+**Dheeraj Paramata**
