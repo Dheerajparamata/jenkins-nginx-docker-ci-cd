@@ -76,18 +76,31 @@ curl http://localhost:8081
 * Website deployed using HTTP on port **8081**.
 
 ## Screenshots
+## Screenshots
 
 ### 1. GitHub Repository
 
+![GitHub Repository](screenshots/01-github-repository.png)
+
 ### 2. Jenkins Job
+
+![Jenkins Job](screenshots/02-jenkins-job.png)
 
 ### 3. Jenkins Console Output
 
+![Jenkins Console Output](screenshots/03-jenkins-console.png)
+
 ### 4. Docker Container Running
+
+![Docker Container](screenshots/04-docker-container.png)
 
 ### 5. Browser Output
 
+![Browser Output](screenshots/05-browser-output.png)
+
 ### 6. curl localhost Output
+
+![curl localhost Output](screenshots/06-curl-output.png)
 
 ## Author
 
